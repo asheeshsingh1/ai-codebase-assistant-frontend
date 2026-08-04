@@ -1,4 +1,5 @@
 export interface Citation {
+    repository_file_id: string;
     file_path: string;
     start_line: number;
     end_line: number;

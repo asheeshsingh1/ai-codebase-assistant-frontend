@@ -1,5 +1,6 @@
 import Providers from "@/components/providers/QueryProvider";
 import { RepositoryProvider } from "@/context/RepositoryContext";
+import { CodeViewerProvider } from "@/context/CodeViewerContext";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -32,7 +33,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-slate-950 text-slate-100">
         <Providers>
           <RepositoryProvider>
-            {children}
+            <CodeViewerProvider>
+              {children}
+            </CodeViewerProvider>
           </RepositoryProvider>
         </Providers>
       </body>
